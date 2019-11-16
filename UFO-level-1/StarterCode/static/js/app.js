@@ -51,7 +51,7 @@ submit.on("click", function() {
     //Filter by date
     var typeVal = d3.select("label").attr("for");
     
-    var filteredData = tableData.filter(alients => alients[typeVal] === inputValue.toLowerCase());
+    var filteredData = tableData.filter(aliens => aliens[typeVal] === inputValue.toLowerCase());
     if (filteredData.length == 0) {
         alert("None Found");
         d3.select("#filtertype").node().value = '';
