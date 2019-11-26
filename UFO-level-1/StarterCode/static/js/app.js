@@ -1,7 +1,7 @@
 // from data.js
-//variables
-//tableData gets data from data.js file
-var tableData = data;
+var tableData = data;    //tableData gets data from data.js file
+//console.log(data);
+
 var filterType = d3.select("#filter-type");
 var filterTypeValue = d3.select("#filter-type-value");
 var submit = d3.select("#filter-btn");  //select the filter-btn which is the SUBMIT button for me
@@ -38,21 +38,23 @@ submit.on("click", function() {
     tbody.html("");
 
     //get the data from box
-    var inputElement = d3.select("#filtertype");
+    //var inputElement = d3.select("#filtertype");
+    var inputElement = d3.select("#datetime");
      
-    var inputValue = inputElement.property("value");
+    var inputValue = inputElement.property("value"); //get the value property of the inputElement
     
     if (inputValue == '') {
         alert("Enter a Date");
-        document.getElementById("#filtertype").focus();
+       document.getElementById("#filtertype").focus();
+        //document.getElementById("#datetime").focus();
         autoPopulate(tableData);
     }
     
     //Filter by date
     var typeVal = d3.select("label").attr("for");
     
-    var filteredData = tableData.filter(aliens => aliens[typeVal] === inputValue.toLowerCase());
-    if (filteredData.length === 0) {
+    var filteredData = tableData.filter(aliens => aliens[typeVal] === inputValue.toLowerCase()); //format to lowercase
+    if (filteredData.length == 0) {
         alert("No Sightings, Sorry!");
         d3.select("#filtertype").node().value = '';
         autoPopulate(tableData);
