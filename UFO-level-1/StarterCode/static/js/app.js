@@ -1,5 +1,5 @@
 // from data.js
-//vaiables
+//variables
 //tableData gets data from data.js file
 var tableData = data;
 var filterType = d3.select("#filter-type");
@@ -8,10 +8,10 @@ var submit = d3.select("#filter-btn");
 var tbody = d3.select("tbody");
 
 console.log(tableData);
-autoPopulate(tableData);
+autoFill(tableData);
 
 //fill the data into the table
-function autoPopulate(tableData) {
+function autoFill(tableData) {
 
 // create table rows (tr) and data elements (td)      
 
